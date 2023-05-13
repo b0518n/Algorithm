@@ -1,4 +1,4 @@
-﻿// 풀이 1
+// 풀이 1
 int n = int.Parse(Console.ReadLine());
 
 int[] arr = new int[1000054];
@@ -51,10 +51,17 @@ void Add(int index, int value)
     }
 }
 
+<<<<<<< HEAD
 Console.WriteLine(arr[n]);
 
 
 //풀이 2
+=======
+Console.WriteLine(arr[n]);
+
+
+//풀이 2
+>>>>>>> 93c9221d9ff32f33dd170d9f13e638e53f3ab91a
 /*
 int n = int.Parse(Console.ReadLine());
 int[] arr = new int[1000054];
