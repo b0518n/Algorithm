@@ -1,4 +1,4 @@
-// 풀이 1
+﻿// 풀이 1
 int n = int.Parse(Console.ReadLine());
 
 int[] arr = new int[1000054];
