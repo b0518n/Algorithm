@@ -12,10 +12,25 @@ long max = b >= d ? b : d;
 long bottom = LCM(max, min);
 long top1 = (bottom / b) * a;
 long top2 = (bottom / d) * c;
+long top = top1 + top2;
 
-if ((top1 + top2) % GCD(max,min) == 0)
+long gcd = 0;
+if (top1 + top2 > bottom)
 {
-    
+    gcd = GCD(top1 + top2, bottom);
+}
+else
+{
+    gcd = GCD(top1 + top2, bottom);
+}
+
+if (gcd == 1)
+{
+    Console.WriteLine($"{top1 + top2} {bottom}");
+}
+else
+{
+    Console.WriteLine($"{(top1 + top2) / gcd} {bottom / gcd}");
 }
 
 long GCD(long x, long y)
