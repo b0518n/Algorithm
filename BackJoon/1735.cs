@@ -1,49 +1,63 @@
-﻿long[] input = Array.ConvertAll(Console.ReadLine().Split(), long.Parse);
-long a = input[0];
-long b = input[1];
+﻿int n = int.Parse(Console.ReadLine());
+int input = 0;
+int min = 0;
+int max = 0;
+int previousValue = 0;
+List<int> list = new List<int>();
+Dictionary<int, int> dic = new Dictionary<int, int>();
 
-input = Array.ConvertAll(Console.ReadLine().Split(), long.Parse);
-long c = input[0];
-long d = input[1];
-
-long min = b <= d ? b : d;
-long max = b >= d ? b : d;
-
-long bottom = LCM(max, min);
-long top1 = (bottom / b) * a;
-long top2 = (bottom / d) * c;
-long top = top1 + top2;
-
-long gcd = 0;
-if (top1 + top2 > bottom)
+for (int i = 0; i < n; i++)
 {
-    gcd = GCD(top1 + top2, bottom);
-}
-else
-{
-    gcd = GCD(top1 + top2, bottom);
-}
-
-if (gcd == 1)
-{
-    Console.WriteLine($"{top1 + top2} {bottom}");
-}
-else
-{
-    Console.WriteLine($"{(top1 + top2) / gcd} {bottom / gcd}");
-}
-
-long GCD(long x, long y)
-{
-    if (y == 0)
+    input = int.Parse(Console.ReadLine());
+    dic.Add(input, 1);
+    if (i == 0)
     {
-        return x;
+        min = input;
     }
 
-    return GCD(y, x % y);
+    if (i == n - 1)
+    {
+        max = input;
+    }
+
+    if (i != 0)
+    {
+        list.Add(input - previousValue);
+    }
+
+    previousValue = input;
+
 }
 
-long LCM(long x, long y)
+List<int,list> list1 = list.Clone().ToHashSet().ToList();
+int difference = list[0];
+for (int i = 1; i < list.Count; i++)
 {
-    return (x * y) / GCD(x, y);
+    difference = GCD(difference, list[i]);
+}
+
+
+
+int GCD(int x, int y)
+{
+    int first = 0;
+    int second = 0;
+    if (x > y)
+    {
+        first = x;
+        second = y;
+    }
+    else
+    {
+        first = y;
+        second = x;
+    }
+
+    if (second == 0)
+    {
+        return first;
+    }
+
+    return GCD(second, first % second);
+
 }
