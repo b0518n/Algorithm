@@ -191,7 +191,7 @@ bool Check_Box(int x, int y, int value)
 
     for (int i = startX; i <= endX; i++)
     {
-        for (int j = startY; j < endY; j++)
+        for (int j = startY; j <= endY; j++)
         {
             if (i == x && j == y)
             {
