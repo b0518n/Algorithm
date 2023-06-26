@@ -3,6 +3,10 @@
 // 6보다 작거나 같은 원소는 배열에 7개 있다는 의미로 생각할 수 있다.
 // 해당 문제는 x 보다 작거나 같은 원소의 개수가 k인 x를 찾는 문제라고 생각할 수 있다.
 
+// 행을 기준으로 보면, 1행을 1단, 2행은 2단 .. n행은 n단 구구단처럼 볼 수 있다.
+// 각 행에서 x보다 작거나 같은 원소의 개수는 n행일 경우 x / n 과 n 중 최솟값이 될 수 있다.
+// 각 행에는 n개의 원소밖에 없으므로 x / n이 n 보다 커지는경우는 존재할 수 없다.
+
 StreamReader sr = new StreamReader(Console.OpenStandardInput());
 StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
 
