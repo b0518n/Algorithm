@@ -53,7 +53,6 @@ for (int i = 1; i < n + 1; i++)
 sw.Flush();
 sw.Close();
 
-// DFS의 경우 스택 자료구조를 이용
 // BFS의 경우 큐 자료구조를 이용해서 큐에 넣을 때 방문 체크를 하는 식으로 구현
 void BFS(List<int>[] graph, int start)
 {
